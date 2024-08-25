@@ -1,0 +1,10 @@
+{
+	"extends": "@repo/common/base.json",
+	"include": ["."],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"types": ["vitest/globals"],
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	}
+  }

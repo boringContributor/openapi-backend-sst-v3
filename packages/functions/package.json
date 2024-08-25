@@ -1,0 +1,25 @@
+{
+	"name": "@repo/functions",
+	"version": "0.0.0",
+	"type": "module",
+	"sideEffects": false,
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"test": "sst shell vitest",
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@repo/core": "workspace:*",
+		"@repo/common": "workspace:*",
+		"http-errors": "^2.0.0",
+		"jsonwebtoken": "^9.0.2",
+		"openapi-backend": "^5.10.6",
+		"sst": "*"
+	},
+	"devDependencies": {
+		"@types/aws-lambda": "^8.10.137",
+		"@types/http-errors": "^2.0.4",
+		"@types/jsonwebtoken": "^9.0.6",
+		"vitest": "^2.0.3"
+	}
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+      "typecheck": {},
+      "test": {
+        "dependsOn": ["^typecheck"]
+      },
+      "dev": {
+        "persistent": true,
+        "cache": false
+      }
+    }
+  }

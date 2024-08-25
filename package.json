@@ -1,0 +1,25 @@
+{
+  "name": "sst-boilerplate",
+  "version": "0.0.0",
+  "scripts": {
+    "sst": "sst",
+    "dev": "sst dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "deploy": "sst deploy",
+    "typecheck": "turbo typecheck",
+    "typegen": "pnpm exec openapi typegen packages/functions/src/api/openapi.yml > packages/common/openapi.d.ts",
+    "openapi": "pnpm exec openapi read packages/functions/src/api/openapi.yml --json > packages/functions/src/api/openapi/definition.json"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.14",
+    "typescript": "^5.5.4",
+    "@repo/common": "workspace:*",
+    "openapicmd": "^2.4.0"
+  },
+  "dependencies": {
+    "sst": "^3.0.56",
+    "zod": "~3"
+  },
+  "packageManager": "pnpm@8.6.8"
+}

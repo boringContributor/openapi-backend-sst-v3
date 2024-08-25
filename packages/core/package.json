@@ -1,0 +1,25 @@
+{
+	"name": "@repo/core",
+	"version": "0.0.0",
+	"type": "module",
+	"sideEffects": false,
+	"main": "src/index.ts",
+	"scripts": {
+		"test": "sst shell vitest",
+		"typecheck": "tsc --noEmit",
+		"build": "tsc"	
+	},
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"dependencies": {
+		"@aws-sdk/lib-dynamodb": "^3.388.0",
+		"@repo/common": "workspace:*",
+		"sst": "*"
+	},
+	"devDependencies": {
+		"@aws-sdk/client-dynamodb": "^3.388.0",
+		"@vitest/coverage-v8": "^1.6.0",
+		"vitest": "^2.0.3"
+	}
+}

@@ -1,0 +1,68 @@
+openapi: 3.0.2
+info:
+  title: "Pet API"
+  version: 1.0.0
+
+paths:
+  "/api/pets":
+    post:
+      operationId: createPet
+      description: Creates a new pet in the store
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pet"
+      responses:
+        "200":
+          description: New Pet Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+    get:
+      operationId: getPets
+      description: Returns all pets from the system that the user has access to
+      responses:
+        "200":
+          description: List of Pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"
+  "/api/pets/{id}":
+    get:
+      operationId: getPetById
+      description: Returns a pet based on its unique ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The pet ID
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The requested Pet
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum: ["cat", "dog"]
+        name:
+          type: string
+      required:
+        - id
+        - type
